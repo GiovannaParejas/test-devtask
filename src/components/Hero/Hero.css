@@ -1,0 +1,18 @@
+.hero {
+    background-image: url(../../assets/hero-img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero-titulo {
+    font-family: "Space Grotesk", sans-serif;
+}
+
