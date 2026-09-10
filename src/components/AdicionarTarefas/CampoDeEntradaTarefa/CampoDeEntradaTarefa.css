@@ -1,0 +1,76 @@
+.campo-de-entrada-tarefa {
+  background-color: var(--input-background);
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid var(--input-border);
+  font-size: 0.85rem;
+  color: var(--branco);
+  outline: none;
+}
+
+.campo-de-entrada-tarefa.campo-de-entrada-tarefa-vazio::-webkit-datetime-edit-day-field,
+.campo-de-entrada-tarefa.campo-de-entrada-tarefa-vazio::-webkit-datetime-edit-month-field,
+.campo-de-entrada-tarefa.campo-de-entrada-tarefa-vazio::-webkit-datetime-edit-year-field,
+.campo-de-entrada-tarefa.campo-de-entrada-tarefa-vazio::-webkit-datetime-edit-text {
+  color: #999;
+}
+
+.campo-de-entrada-tarefa::-webkit-datetime-edit-text,
+.campo-de-entrada-tarefa::-webkit-datetime-edit-day-field,
+.campo-de-entrada-tarefa::-webkit-datetime-edit-month-field,
+.campo-de-entrada-tarefa::-webkit-datetime-edit-year-field {
+  color: var(--branco);
+}
+
+.campo-de-entrada-tarefa-option-vazio {
+  color: #999;
+}
+
+.campo-de-entrada-tarefa-option option {
+  color: var(--branco);
+}
+
+.campo-de-entrada-tarefa:focus {
+  border: 1px solid var(--azul);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.campo-de-entrada-tarefa-vazio::-webkit-calendar-picker-indicator {
+  opacity: 0.5;
+}
+
+.campo-de-entrada-tarefa-textarea {
+  font-family: "Inter", sans-serif;
+  height: 80px;
+}
+
+.campo-de-entrada-tarefa-option {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 40px;
+  background-image: url("../../assets/caret-down.svg");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+  cursor: pointer;
+}
+
+.campo-de-entrada-tarefa-option option {
+  background-color: var(--cinza-claro);
+  color: var(--branco);
+}
+
+select {
+  padding-right: 40px;
+}
+
+/*Desktop maior*/
+@media screen and (min-width: 1440px) {
+  .campo-de-entrada-tarefa {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,53 @@
+.botao {
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  color: var(--branco);
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 8px;
+  align-content: center;
+  transition: 0.3s ease;
+  font-size: 1rem;
+}
+
+.botao-azul {
+  background-color: var(--azul);
+  border: 2px solid var(--azul);
+}
+
+.botao-azul:hover {
+  background-color: transparent;
+  border: 2px solid var(--branco);
+}
+
+.botao-branco {
+  background-color: transparent;
+  border: 2px solid var(--branco);
+}
+
+.botao-branco:hover {
+  background-color: var(--azul);
+  border: 2px solid var(--azul);
+}
+
+/*Desktop maior*/
+@media screen and (min-width: 1440px) {
+  .botao {
+    font-size: 1.2rem;
+  }
+}
+
+/*Tablet*/
+@media screen and (min-width: 576px) and (max-width: 991px) {
+  .botao {
+    font-size: 1.1rem;
+  }
+}
+
+/*Mobile*/
+@media screen and (max-width: 576px) {
+  .botao {
+    width: 70%;
+    font-size: 1rem;
+  }
+}

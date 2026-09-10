@@ -1,0 +1,44 @@
+
+.lista-de-tarefas {
+  gap: 40px;
+}
+.adicionar-tarefa-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--cinza-claro);
+  border: 1px solid var(--border-card);
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.adicionar-tarefa-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.tarefas-filtros {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/*Desktop maior*/
+@media screen and (min-width: 1440px) {
+  .adicionar-tarefa-titulo {
+    font-size: 2.2rem;
+  }
+}
+
+/*Mobile*/
+@media screen and (max-width: 576px) {
+  .adicionar-tarefa-card {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .adicionar-tarefa-titulo {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+  }
+}

@@ -1,0 +1,28 @@
+.botao-adicionar-tarefa {
+  background-color: var(--azul);
+  border: 1px solid var(--azul);
+  border-radius: 8px;
+  padding: 12px;
+  color: var(--branco);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+.botao-adicionar-tarefa:hover {
+  background-color: transparent;
+  border: 1px solid var(--branco);
+}
+
+/*Desktop maior*/
+@media screen and (min-width: 1440px) {
+  .botao-adicionar-tarefa {
+    font-size: 1.1rem;
+  }
+}
+
+/*Mobile*/
+@media screen and (max-width: 576px) {
+  .botao-adicionar-tarefa {
+    font-size: 0.95rem;
+  }
+}

@@ -1,2 +1,52 @@
-@import "tailwindcss";
+:root {
+    --azul: #3b82f6;
+    --branco: #FFFFFF;
+    --cinza-escuro: #0D1117;
+    --cinza-sub: #FFFFFFD9;
+    --cinza-claro: #161B22;
+    --border-card: #30363D1A;
+    --input-background: #0D111733;
+    --input-border: #FFFFFF80;
+    --prioridade-baixa: #4ADE80;
+    --prioridade-baixa-fundo: #22C55E33;
+    --prioridade-media: #FB923C; 
+    --prioridade-media-fundo: #F9731633;
+    --prioridade-alta: #F87171;
+    --prioridade-alta-fundo: #EF444433;
+}
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+.lista-de-tarefas {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cinza-escuro);
+    align-items: center;
+    padding: 80px;
+}
+
+/*Tablet*/
+@media screen and (min-width: 576px) and (max-width: 991px) {
+.lista-de-tarefas {
+    padding: 60px;
+}
+}
+
+/*Mobile*/
+@media screen and (max-width: 576px) {
+.lista-de-tarefas {
+    padding: 40px 24px;
+}
+}

@@ -1,0 +1,97 @@
+.hero {
+  background-image: url(../../assets/hero-img.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px;
+  flex-direction: column;
+  text-align: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.hero-titulo {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 6rem;
+  color: var(--branco);
+  margin-bottom: 10px;
+}
+
+.hero-sub {
+  font-weight: 600;
+  color: var(--cinza-sub);
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.hero-paragrafo {
+  font-weight: 300;
+  color: var(--cinza-sub);
+  font-size: 1.2rem;
+}
+
+.hero-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/*Desktop maior*/
+@media screen and (min-width: 1440px) {
+  .hero-titulo {
+    font-size: 8rem;
+  }
+
+  .hero-sub {
+    font-size: 2rem;
+  }
+
+  .hero-paragrafo {
+    font-size: 1.5rem;
+  }
+}
+
+/*Tablet*/
+@media screen and (min-width: 576px) and (max-width: 991px) {
+  .hero {
+    padding: 60px;
+  }
+  .hero-titulo {
+    font-size: 6rem;
+  }
+
+  .hero-sub {
+    font-size: 1.7rem;
+  }
+
+  .hero-paragrafo {
+    font-size: 1.4rem;
+  }
+}
+
+/*Mobile*/
+@media screen and (max-width: 576px) {
+  .hero {
+    padding: 24px;
+  }
+
+  .hero-titulo {
+    font-size: 4rem;
+  }
+
+  .hero-sub {
+    font-size: 1.2rem;
+  }
+
+  .hero-paragrafo {
+    font-size: 1.1rem;
+  }
+}

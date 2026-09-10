@@ -1,0 +1,20 @@
+.label-tarefa {
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--cinza-sub);
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+/*Desktop maior*/
+@media screen and (min-width: 1440px) {
+  .label-tarefa {
+    font-size: 1.15rem;
+  }
+}
+
+/*Mobile*/
+@media screen and (max-width: 576px) {
+  .label-tarefa {
+    font-size: 1rem;
+  }
+}

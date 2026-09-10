@@ -1,0 +1,17 @@
+.botao-filtro {
+    padding: 12px 0;
+    width: 100%;
+    color: var(--cinza-sub);
+    border: 2px solid var(--input-border);
+    background-color: transparent;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    font-size: 0.9rem;
+
+}
+.filtro-ativo{
+    color: var(--branco);
+    border: 2px solid var(--azul);
+    background-color: var(--azul);
+}
+

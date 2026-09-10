@@ -1,0 +1,38 @@
+
+.tarefas-card-data-prioridade {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.tarefas-card-data {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.tarefas-card-prioridade {
+  padding: 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+  width: 100px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.tarefas-card-prioridade-alta {
+  color: var(--prioridade-alta);
+  background-color: var(--prioridade-alta-fundo);
+}
+
+.tarefas-card-prioridade-media {
+  color: var(--prioridade-media);
+  background-color: var(--prioridade-media-fundo);
+}
+
+.tarefas-card-prioridade-baixa {
+  color: var(--prioridade-baixa);
+  background-color: var(--prioridade-baixa-fundo);
+}
+

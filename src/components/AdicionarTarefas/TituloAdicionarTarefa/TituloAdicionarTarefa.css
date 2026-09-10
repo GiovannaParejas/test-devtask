@@ -1,0 +1,8 @@
+.adicionar-tarefa-titulo {
+  text-align: center;
+  color: var(--branco);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
