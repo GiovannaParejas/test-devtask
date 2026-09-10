@@ -6,3 +6,18 @@
   font-size: 2rem;
   margin-bottom: 30px;
 }
+
+@media screen and (min-width: 1440px) {
+  .adicionar-tarefa-titulo {
+    font-size: 2.2rem;
+  }
+}
+
+/*Mobile*/
+@media screen and (max-width: 576px) {
+
+  .adicionar-tarefa-titulo {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+  }
+}

@@ -97,7 +97,7 @@ const ListaDeTarefas = () => {
   };
 
   return (
-    <div className="lista-de-tarefas">
+    <div className="lista-tarefas">
       <div className="adicionar-tarefa-card">
         <TituloAdicionarTarefa>Cadastre uma nova tarefa</TituloAdicionarTarefa>
 

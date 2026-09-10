@@ -3,3 +3,11 @@
   font-weight: 300;
   color: var(--cinza-sub);
 }
+
+/*Mobile*/
+@media screen and (max-width: 576px) {
+
+.tarefas-card-descricao {
+  font-size: 1rem;
+}
+}

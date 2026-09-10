@@ -36,3 +36,20 @@
   background-color: var(--prioridade-baixa-fundo);
 }
 
+/*Mobile*/
+@media screen and (max-width: 576px) {
+  .tarefas-card-data-prioridade {
+  margin-bottom: 20px;
+}
+
+.tarefas-card-data {
+  font-size: 0.9rem;
+}
+
+.tarefas-card-prioridade {
+  padding: 8px 0;
+  font-size: 0.9rem;
+  width:90px;
+}
+}
+

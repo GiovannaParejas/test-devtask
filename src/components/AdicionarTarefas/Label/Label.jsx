@@ -1,5 +1,5 @@
 import React from "react";
-import "../Label/Label.css";
+import "./Label.css";
 
 const Label = ({ children, htmlFor }) => {
   return (

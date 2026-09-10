@@ -2,7 +2,6 @@
   width: 100%;
 }
 
-
 .tarefas-lista {
   display: flex;
   flex-direction: column;
@@ -64,3 +63,17 @@
 .tarefas-card-concluida .tarefas-card-titulo {
   text-decoration: line-through;
 }
+
+/*Mobile*/
+@media screen and (max-width: 576px) {
+
+.tarefas-lista {
+  gap: 20px;
+}
+
+.tarefas-card {
+  padding: 30px;
+}
+}
+
+
