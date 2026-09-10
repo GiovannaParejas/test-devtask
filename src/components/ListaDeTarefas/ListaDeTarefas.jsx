@@ -7,10 +7,8 @@ import CampoDeEntradaTarefa from "../AdicionarTarefas/CampoDeEntradaTarefa/Campo
 import CampoDeEntradaTarefaTextarea from "../AdicionarTarefas/CampoDeEntradaTarefa/CampoDeEntradaTarefaTextarea";
 import CampoDeEntradaTarefaOption from "../AdicionarTarefas/CampoDeEntradaTarefa/CampoDeEntradaTarefaOption";
 import BotaoAdicionarTarefa from "../AdicionarTarefas/BotaoAdicionarTarefa/BotaoAdicionarTarefa";
-import "./Tarefas.css";
 import ConcluirIcone from "../../assets/concluir-icone.svg";
 import ExcluirIcone from "../../assets/excluir-icone.svg";
-import TituloAdicionarTarefa from "../AdicionarTarefas/TituloAdicionarTarefa/TituloAdicionarTarefa";
 import TituloTarefas from "../Tarefas/TituloTarefas/TituloTarefas";
 import BotaoTarefaFiltro from "../Tarefas/BotaoTarefaFiltro/BotaoTarefaFiltro";
 import DadosTarefa from "../Tarefas/DadosTarefa/DadosTarefa";
@@ -153,7 +151,7 @@ const ListaDeTarefas = () => {
 
           {/* Descrição */}
           <CampoTarefa>
-            <Label htmlFor="data">Descrição</Label>
+            <Label htmlFor="descricao">Descrição</Label>
             <CampoDeEntradaTarefaTextarea
               value={descricao}
               onChange={(e) => setDescricao(e.target.value)} // callback de mudança
@@ -165,7 +163,7 @@ const ListaDeTarefas = () => {
 
           {/* Prioridade */}
           <CampoTarefa>
-            <Label htmlFor="data">Prioridade</Label>
+            <Label htmlFor="prioridade">Prioridade</Label>
             <CampoDeEntradaTarefaOption
               id="prioridade"
               value={prioridade}

@@ -6,6 +6,8 @@
   font-size: 0.85rem;
   color: var(--branco);
   outline: none;
+    width: 100%;
+  box-sizing: border-box;
 }
 
 .campo-de-entrada-tarefa.campo-de-entrada-tarefa-vazio::-webkit-datetime-edit-day-field,
@@ -34,8 +36,14 @@
   border: 1px solid var(--azul);
 }
 
+.campo-de-entrada-tarefa[type="date"] {
+  padding-right: 16px; /* espaço reservado à direita, antes do ícone nativo */
+}
+
 input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
+  padding: 8px; /* afasta o ícone das bordas, aumentando a área clicável também */
+  margin-right: 4px; /* opcional: espaço extra específico da direita */
 }
 
 .campo-de-entrada-tarefa-vazio::-webkit-calendar-picker-indicator {
