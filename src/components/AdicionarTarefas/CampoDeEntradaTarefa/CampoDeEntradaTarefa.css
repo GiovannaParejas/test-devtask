@@ -10,18 +10,26 @@
   box-sizing: border-box;
 }
 
-.campo-de-entrada-tarefa.campo-de-entrada-tarefa-vazio::-webkit-datetime-edit-day-field,
-.campo-de-entrada-tarefa.campo-de-entrada-tarefa-vazio::-webkit-datetime-edit-month-field,
-.campo-de-entrada-tarefa.campo-de-entrada-tarefa-vazio::-webkit-datetime-edit-year-field,
-.campo-de-entrada-tarefa.campo-de-entrada-tarefa-vazio::-webkit-datetime-edit-text {
-  color: #999;
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  padding-right: 40px; /* mesmo espaço reservado do select, pro ícone não colar */
+  background-image: url("../../../assets/caret-down.svg");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
 }
 
-.campo-de-entrada-tarefa::-webkit-datetime-edit-text,
-.campo-de-entrada-tarefa::-webkit-datetime-edit-day-field,
-.campo-de-entrada-tarefa::-webkit-datetime-edit-month-field,
-.campo-de-entrada-tarefa::-webkit-datetime-edit-year-field {
-  color: var(--branco);
+/* Esconde o ícone nativo, mas mantém a área clicável funcionando */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 
 .campo-de-entrada-tarefa-option-vazio {
@@ -36,15 +44,7 @@
   border: 1px solid var(--azul);
 }
 
-.campo-de-entrada-tarefa[type="date"] {
-  padding-right: 16px; /* espaço reservado à direita, antes do ícone nativo */
-}
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-  filter: invert(1);
-  padding: 8px; /* afasta o ícone das bordas, aumentando a área clicável também */
-  margin-right: 4px; /* opcional: espaço extra específico da direita */
-}
 
 .campo-de-entrada-tarefa-vazio::-webkit-calendar-picker-indicator {
   opacity: 0.5;
