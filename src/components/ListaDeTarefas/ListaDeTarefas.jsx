@@ -14,6 +14,7 @@ import BotaoTarefaFiltro from "../Tarefas/BotaoTarefaFiltro/BotaoTarefaFiltro";
 import DadosTarefa from "../Tarefas/DadosTarefa/DadosTarefa";
 import TituloTarefa from "../Tarefas/TituloTarefa/TituloTarefa";
 import DescricaoTarefa from "../Tarefas/DescricaoTarefa/DescricaoTarefa";
+import TituloAdicionarTarefa from "../AdicionarTarefas/TituloAdicionarTarefa/TituloAdicionarTarefa";
 
 const ListaDeTarefas = () => {
   // useState (hook): guarda o array de tarefas. A função passada como argumento
