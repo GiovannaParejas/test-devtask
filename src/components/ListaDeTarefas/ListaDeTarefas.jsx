@@ -18,17 +18,25 @@ import TituloTarefa from "../Tarefas/TituloTarefa/TituloTarefa";
 import DescricaoTarefa from "../Tarefas/DescricaoTarefa/DescricaoTarefa";
 
 const ListaDeTarefas = () => {
+  // useState (hook): guarda o array de tarefas. A função passada como argumento
+  // só roda uma vez, na primeira renderização,
+  // evitando ler o localStorage a cada re-render.
   const [tarefas, setTarefas] = useState(() => {
     const salvarTarefas = localStorage.getItem("item-tarefa");
     return salvarTarefas ? JSON.parse(salvarTarefas) : [];
   });
 
+  // useState (hook): um state simples pra cada campo controlado do formulário
   const [nome, setNome] = useState("");
   const [data, setData] = useState("");
   const [descricao, setDescricao] = useState("");
   const [prioridade, setPrioridade] = useState("");
+
+  // useState (hook): guarda qual filtro está ativo ("todas", "pendentes" ou "concluidas")
   const [filtro, setFiltro] = useState("todas");
 
+  // useEffect (hook): roda toda vez que "tarefas" muda (por causa do array de
+  // dependências [tarefas]), sincronizando o state com o localStorage.
   useEffect(() => {
     localStorage.setItem("item-tarefa", JSON.stringify(tarefas));
   }, [tarefas]);
@@ -54,17 +62,25 @@ const ListaDeTarefas = () => {
     setPrioridade("");
   };
 
+  // .map() (método de array): percorre todas as tarefas e retorna um novo
+  // array. A função passada pro map é uma callback e é chamada uma vez pra
+  // cada item do array, recebendo esse item como parâmetro.
   const concluirTarefa = (id) => {
     const tarefasAtualizadas = tarefas.map((tarefa) => {
       if (tarefa.id === id) {
+        // encontrou a tarefa certa: retorna uma cópia com "concluida" invertido
         return { ...tarefa, concluida: !tarefa.concluida };
       } else {
+        // não é a tarefa procurada: retorna ela sem nenhuma alteração
         return tarefa;
       }
     });
     setTarefas(tarefasAtualizadas);
   };
   const removerTarefa = (id) => {
+    // .filter() (método de array): percorre todas as tarefas e retorna um
+    // novo array só com as que passam no teste da callback (tarefa.id != id).
+    // A tarefa com o id buscado é a única que fica de fora do resultado.
     const apagarTarefa = tarefas.filter((tarefa) => tarefa.id != id);
     setTarefas(apagarTarefa);
   };
@@ -76,6 +92,9 @@ const ListaDeTarefas = () => {
     setTarefas(atualizarTarefasConcluidas);
   };
 
+  // .filter() (método de array): gera a lista que será exibida na tela,
+  // sem alterar o array original "tarefas". A callback decide, tarefa por
+  // tarefa, se ela deve continuar no resultado, de acordo com o filtro ativo.
   const tarefasFiltradas = tarefas.filter((tarefa) => {
     if (filtro === "todas") return true;
     if (filtro === "concluidas") return tarefa.concluida;
@@ -101,12 +120,17 @@ const ListaDeTarefas = () => {
       <div className="adicionar-tarefa-card">
         <TituloAdicionarTarefa>Cadastre uma nova tarefa</TituloAdicionarTarefa>
 
+        {/* onSubmit recebe uma referência direta à função adicionarTarefa
+            (não é uma arrow function aqui porque ela não precisa de argumento
+            extra, o React já passa o evento "e" automaticamente) */}
         <form onSubmit={adicionarTarefa} className="adicionar-tarefa-form">
           {/* Nome */}
           <CampoTarefa>
             <Label htmlFor="nome">Nome</Label>
             <CampoDeEntradaTarefa
               value={nome}
+              // onChange (callback): função anônima executada a cada
+              // tecla digitada, atualizando o state "nome"
               onChange={(e) => setNome(e.target.value)}
               type="text"
               id="nome"
@@ -121,7 +145,7 @@ const ListaDeTarefas = () => {
             <CampoDeEntradaTarefa
               type="date"
               value={data}
-              onChange={(e) => setData(e.target.value)}
+              onChange={(e) => setData(e.target.value)} // callback de mudança
               id="data"
               name="dataTarefa"
             />
@@ -132,7 +156,7 @@ const ListaDeTarefas = () => {
             <Label htmlFor="data">Descrição</Label>
             <CampoDeEntradaTarefaTextarea
               value={descricao}
-              onChange={(e) => setDescricao(e.target.value)}
+              onChange={(e) => setDescricao(e.target.value)} // callback de mudança
               id="descricao"
               placeholder="Digite a descrição da tarefa"
               name="descricaoTarefa"
@@ -145,7 +169,7 @@ const ListaDeTarefas = () => {
             <CampoDeEntradaTarefaOption
               id="prioridade"
               value={prioridade}
-              onChange={(e) => setPrioridade(e.target.value)}
+              onChange={(e) => setPrioridade(e.target.value)} // callback de mudança
               name="prioridade"
             />
           </CampoTarefa>
@@ -163,6 +187,8 @@ const ListaDeTarefas = () => {
             className={
               filtro === "todas" ? "botao-filtro filtro-ativo" : "botao-filtro"
             }
+            // onClick (callback): função anônima que, ao ser executada no
+            // clique, chama setFiltro com o valor fixo "todas"
             onClick={() => setFiltro("todas")}
           >
             Todas
@@ -175,7 +201,7 @@ const ListaDeTarefas = () => {
                 ? "botao-filtro filtro-ativo"
                 : "botao-filtro"
             }
-            onClick={() => setFiltro("pendentes")}
+            onClick={() => setFiltro("pendentes")} // callback de clique
           >
             Pendentes
           </BotaoTarefaFiltro>
@@ -187,12 +213,15 @@ const ListaDeTarefas = () => {
                 ? "botao-filtro filtro-ativo"
                 : "botao-filtro"
             }
-            onClick={() => setFiltro("concluidas")}
+            onClick={() => setFiltro("concluidas")} // callback de clique
           >
             Concluídas
           </BotaoTarefaFiltro>
         </div>
         <ul className="tarefas-lista">
+          {/* .map() (método de array): percorre "tarefasFiltradas" e
+              transforma cada objeto tarefa em um elemento JSX <li>.
+              A callback recebe cada "tarefa" e retorna o JSX correspondente. */}
           {tarefasFiltradas.map((tarefa) => (
             <li
               key={tarefa.id}
@@ -224,6 +253,9 @@ const ListaDeTarefas = () => {
               <div className="tarefas-card-botoes">
                 <button
                   className="tarefas-card-botao"
+                  // onClick (callback): arrow function que "encapsula" a
+                  // chamada com o id certo, necessário porque concluirTarefa
+                  // precisa do id de cada tarefa específica do map
                   onClick={() => concluirTarefa(tarefa.id)}
                 >
                   <img
@@ -234,7 +266,7 @@ const ListaDeTarefas = () => {
                 </button>
                 <button
                   className="tarefas-card-botao"
-                  onClick={() => removerTarefa(tarefa.id)}
+                  onClick={() => removerTarefa(tarefa.id)} // callback de clique
                 >
                   <img
                     src={ExcluirIcone}

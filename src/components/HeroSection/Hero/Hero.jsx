@@ -16,9 +16,15 @@ const Hero = () => {
         </p>
       </div>
       <div className="hero-botoes">
+        {/* BotaoHero renderizado como <a href="#adicionarTarefa">:
+            ao clicar, o navegador rola até o elemento com esse id
+            (precisa existir um id="adicionarTarefa" em algum lugar
+            da página — no card do formulário, por exemplo) */}
         <Botao href="#adicionarTarefa" className="botao-azul botao">
           Adicionar tarefa
         </Botao>
+        {/* mesma lógica, mas rolando até id="verTarefas" — que já
+            existe na div .tarefas do ListaDeTarefas */}
         <Botao href="#verTarefas" className="botao-branco botao">
           Ver tarefas
         </Botao>
