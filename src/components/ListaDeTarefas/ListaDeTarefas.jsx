@@ -147,6 +147,7 @@ const ListaDeTarefas = () => {
               onChange={(e) => setData(e.target.value)} // callback de mudança
               id="data"
               name="dataTarefa"
+              placeholder="data"
             />
           </CampoTarefa>
 

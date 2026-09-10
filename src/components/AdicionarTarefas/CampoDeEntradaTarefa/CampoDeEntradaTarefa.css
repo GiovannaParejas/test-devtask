@@ -6,7 +6,7 @@
   font-size: 0.85rem;
   color: var(--branco);
   outline: none;
-    width: 100%;
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -14,15 +14,13 @@ input[type="date"] {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-
-  padding-right: 40px; /* mesmo espaço reservado do select, pro ícone não colar */
+  padding-right: 40px;
   background-image: url("../../../assets/caret-down.svg");
   background-repeat: no-repeat;
   background-position: right 16px center;
   background-size: 16px;
 }
 
-/* Esconde o ícone nativo, mas mantém a área clicável funcionando */
 input[type="date"]::-webkit-calendar-picker-indicator {
   opacity: 0;
   position: absolute;
@@ -43,8 +41,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .campo-de-entrada-tarefa:focus {
   border: 1px solid var(--azul);
 }
-
-
 
 .campo-de-entrada-tarefa-vazio::-webkit-calendar-picker-indicator {
   opacity: 0.5;
